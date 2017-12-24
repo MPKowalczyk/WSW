@@ -1,0 +1,13 @@
+\section{Wstęp}
+\label{sec:wstep}
+
+\subsection{Cel projektu}
+\label{sub:celprojektu}
+Celem projektu jest implementacja rozwiązania pozwalającego na rozpoznawanie obiektów na obrazach w reprezentacji zdarzeniowej. Idea reprezentacji zdarzeniowej polega na zaznaczaniu pikseli, dla których nastąpiła pewna zmiana w obrazie wejściowym kamery. Współrzędne wraz z typem zmiany(wzrost lub spadek wartości piksela) tego piksela następnie są wysyłane do zewnętrznego urządzenia, które przetwarza te dane. Metoda ta pozwala na zmniejszenie ilości danych, które potrzebne są do przesłanie z kamery i przetworzenia w innym urządzeniu. Projekt zakłada, że zapisane dane z reprezentacji zdarzeniowej są następnie przetworzone przez sieć neuronową zaimplementowaną w programie MATLAB.
+
+\subsection{Proponowane rozwiązanie}
+\label{sub:proponowanerozwiazanie}
+Zaproponowane i sprawdzone rozwiązanie wymaga wstępnego przetworzenia zarejestrowanych danych. Polega ono na agregowaniu współrzędnych pikseli z \(10 \si{us}\). Dane te następnie formatowane jako obraz o rozmiarze \(40\times40\si{px}\) oraz jako wektor, którego kolejne elementy są kolejnymi elementami stworzonego obrazu. Stworzone w ten sposób wektory są danymi wejściowymi sieci neuronowej. Dane wyjściowe są zapisywane w postaci wektora one-hot. Jest to wektor, który ma na jednym miejscu jedynkę, a na pozostałych zera.
+
+\subsection{Alternatywne rozwiązania}
+\label{sub:alternatywnerozwiazania}
