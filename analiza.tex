@@ -1,0 +1,38 @@
+\section{Analiza złożoności i estymacja zapotrzebowania na zasoby}
+\label{sub:analiza}
+
+Zadanie projektowe zostało podzielone na dwie części. Pierwsza z nich dotyczyła odpowiedniego przygotowania danych, czyli wybrania odpowiednich zdarzeń z bazy \textit{MNIST-DVS} i dostosowania ich do aktualnych potrzeb. Dane te zostały następnie użyte podczas właściwego działania algorytmu, czyli uczenia i testowania sieci neuronowej.
+
+\subsection{Przygotowanie danych}
+\label{sub:przygotowanie}
+
+Cała baza \cite{baza} zawierała bardzo dużo informacji. Nie było konieczności użycia tak dużej liczby wartości, dlatego zdecydowano się na wybranie około 10\%. Liczba ta okazała się wystarczająca do zobrazowania wyników istotnych z punktu widzenia założonych celów.
+W celu znalezienia zbioru uczącego, napisano skrypt w programie \textit{MATLAB 2017b}. Ta część zadania nie wymagała specjalnych zasobów obliczeniowych. Podstawowe wymagania systemowo - sprzętowe, potrzebne do poprawnego działania programu \textit{MATLAB 2017b}, znalezione w \cite{wymagania_Matlab}, są następujące:
+
+\begin{itemize}
+\item system operacyjny: Windows 7 SP1 / Windows 8.1 / Windows 10
+\item procesor: Intel lub AMD x86-64 (rekomendowane wsparcie dla instrukcji AVX2)
+\item dysk: 4 - 6 Gb dla instalacji, 2 Gb wolnego miejsca dla prawidłowego działania programu
+\item RAM: co najmniej 2 Gb
+\item grafika: nie jest wymagana żadna konkretna karta graficzna, jednak polecana to taka, która ma wsparcie dla OpenGL 3.3 z 1 Gb pamięci GPU.
+\end{itemize}
+
+Zasoby pamięciowe, jakie dodatkowo musi posiadać komputer PC, na którym działa program, muszą pomieścić oryginalną bazę, która zajmuje około 9 Gb miejsca. Jednak już po przetworzeniu jej przez \textit{MATLAB} zajmuje dużo mniej miejsca - to około 200 Mb.
+Aplikacja musi poradzić sobie z dużą ilością danych - na bazę składa się około 100 000 plików,  przedstawiających zdarzenia przypadające na pewne przesunięcie danej liczby. Pliki te są zapisane w formacie .aedat, stworzonym przez twórców \cite{MNIST_DVS}. Autorzy stworzyli specjalny skrypt, który pozwala na zamianę formatu .aedat na format, który może być odczytany i dalej przetwarzany przez \textit{MATLAB} (format .mat). Wymaga to wykonaniu dodatkowego szeregu instrukcji przy każdorazowym przetwarzaniu pliku z bazy, a wyniki tu generowane są przedstawione w formacie double. To wszystko powoduje dość długi czas trwania obliczeń, dlatego im lepsze parametry ma komputer PC, na którym wykonywane są obliczenia, tym wyniki uzyskiwane są sprawniej. Po wykonaniu obliczeń, uzyskuje się dwie macierze, wykorzystywane później do uczenia sieci. W obu wartościami są liczby boolean. Ponieważ nie ma tutaj żadnych zależności z pozostałymi modułami (baza została przygotowana wcześniej i nie koliduje z procesem uczącym), nie ma znaczenia na jakim komputerze będą wykonywane obliczenia. Możliwości sprzętowe powodują jednak, że efektywność pracy rośnie.
+
+\subsection{Uczenie sieci neuronowej}
+\label{sub:uczenie}
+
+Właściwa część algorytmu, czyli uczenie i testowanie sieci neuronowej została również wykonana w programie \textit{MATLAB 2017b}. Wymagania sprzętowo - programowe są tu więc identyczne co te, wymienione w sekcji \ref{sub:przygotowanie}. Jednak tutaj zastosowano dwa różne podejścia do tematu.
+
+Pierwsze podejście zakładało użycie gotowego GUI programu \textit{MATLAB - Neural Network Toolbox}, stworzonego do uczenia i testowania sieci neuronowej. Jedynym wymaganiem był tu dostęp do tego narzędzia z poziomu programu \textit{MATLAB}. 
+
+Drugie podejście polegało na stworzeniu sieci neuronowej za pomocą funkcji programu \textit{MATLAB}. Dodatkowo, w celu przyspieszenia obliczeń, wykorzystano tutaj GPU (z ang. \textit{ graphics processing unit}). Aby taki algorytm mógł działać, niezbędna jest tutaj karta graficzna NVIDIA wyposażona w jednostkę obliczeniową, obsługująca architekturę obliczeniową CUDA (z ang. \textit{Compute Unified Device Architecture}). Takie podejście jest uzasadnione, ponieważ uczenie sieci neuronowych to proces równoległy. Zatem zwiększenie zrównoleglenia obliczeń poprzez użycie dodatkowego procesora znacznie usprawni przebieg działania i spowoduje, że testowanie, polegające na wielokrotnym uczeniu sieci z różnymi parametrami będzie szybsze, a cały proces bardziej efektywny. Wydajność w tym przypadku wzrasta w znacznym stopniu.
+
+W obu podejściach jako wektory wejściowe podane są macierze:
+
+\begin{itemize}
+\item danych -  94 490 $\times$ 1600
+\item wyjść -  94 490 $\times$ 10 
+\end{itemize}
+W obu przypadkach w pierwszym podejściu były to wartości logiczne, w drugim zostały zapisane jako typ \textit{double}.

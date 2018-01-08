@@ -1,0 +1,36 @@
+\section{DODATEK A: Szczegółowy opis zadania}
+\label{sub:dodatekA}
+
+\subsection{Specyfikacja projektu}
+\label{sub:specyfikacja}
+
+Tematem projektu było rozpoznawanie obiektów na obrazach w reprezentacji zdarzeniowej. Postawione zadanie wymagało znalezienia odpowiednich danych, które zostały przedstawione poprzez następujące po sobie zdarzenia. Podejście to nieco różni się od standardowego, trudno byłby wygenerować zbiór uczący  w ramach realizacji tego zadania, bo to już jest temat na inny projekt. W literaturze poleconej przez prowadzącego znaleziono metodę, której wynikiem była baza \textit{MNIST-DVS}. Baza ta została odnaleziona w \cite{baza} i wykorzystana do uczenia sieci neuronowej. Celem, jaki został postawiony, było nauczenie sieci neuronowej, bazując na zdarzeniowej reprezentacji danych, aby była w stanie rozpoznać 10 cyfr: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. Wybór rodzaju sieci oraz platform sprzętowo - programowych prowadzący zostawił autorom projektu. 
+
+\subsection{Szczegółowy opis realizowanych algorytmów przetwarzania danych}
+\label{sub:opis}
+
+Sekcja ta będzie rozszerzeniem informacji zawartych już wcześniej w paragrafie \ref{sub:koncepcja}. Zastosowane algorytmy zostaną tu omówione bardziej od strony matematycznej.
+
+\subparagraph{Przygotowanie danych}
+\label{sub:przyg}
+
+Przetwarzanie bazy \textit{MNIST-DVS} zostało napisane w programie \textit{MATLAB}. Było to konieczne, ponieważ autorzy artykułu \cite{MNIST_DVS} zastosowali rozszerzenie .aedat. Dostarczyli dodatkowo skrypt \textit{dat2mat}, który pozwalał na zamianę tych danych na pliki z rozszerzeniem .mat, które można już w łatwy sposób podglądnąć i przetworzyć. W tym przypadku zastosowano przetwarzanie sekwencyjne, tworząc skrypt, który zamieniał rozszerzenie i dostosowywał bazę do realizacji postawionych w projekcie celów.
+
+\subparagraph{Uczenie sieci}
+\label{sub:ucz}
+
+Uczenie sieci przebiegało z użyciem wbudowanych funkcji programu \textit{MATLAB}, co znacznie ułatwiło pracę. Dane były przetwarzanie współbieżnie, wykorzystując rdzenie procesora CPU oraz procesor graficzny GPU. Pierwszy sposób, uwzględniający GUI do uczenia sieci neuronowych, używał algorytmu wstecznej propagacji błędów i będzie omówiony w sekcji \ref{sub:wstecz}. Drugi sposób polegał na wykorzystaniu wbudowanych funkcji do uczenia maszynowego i używał głębokich sieci neuronowych do klasyfikacji danych. 
+
+\subparagraph{Algorytm wstecznej propagacji błędów}
+\label{sub:wstecz}
+
+To podstawowy algorytm uczenia nienadzorowanego wielowarstwowych sieci neuronowych. Zaletą tej sieci jest to, że wagi można tu wytrenować, znajdując ich optymalny zestaw \cite{back}. Metoda umożliwia modyfikację wag w sieci o architekturze warstwowej, we wszystkich jej warstwach. Po ustaleniu topologii, początkowe wagi są inicjowane tu losowo. Przyjmują bardzo małe wartości. Następnie dla danego wektora uczącego oblicza się odpowiedź sieci, warstwa po warstwie, stosując algorytm spadku gradientowego \cite{back2}. Każdy neuron wyjściowy oblicza swój błąd, który następnie jest propagowany do wcześniejszych warstw. Następnie każdy neuron modyfikuje wagi na podstawie wartości błędu. Dodatkowo jest tu wprowadzona powtarzalność, czyli gdy wszystkie dane wejściowe zostaną już użyte, zmieniana jest ich kolejność i ponownie są wprowadzana do sieci. Proces trwa do momentu zatrzymania się średniego błędu kwadratowego. Jest to proces dość kosztowny obliczeniowo, zwłaszcza kiedy sieć jest rozbudowana.
+
+\subparagraph{Głębokie sieci neuronowe}
+\label{sub:glebokie}
+
+Uczenie głębokie sieci neuronowej następuje krok po kroku. Pozwala na stopniowe wyznaczenie wag dla poszczególnych warstw sieci w celu innej reprezentacji cech wspólnych. To poszczególne warstwy reprezentują tu cechy wspólne wzorców uczących i na tej podstawie tworzą reprezentacje bardziej skomplikowanych cech w kolejnych warstwach sieci głębokich. Jest to ulepszona metoda niż wielowarstwowe sieci neuronowe uczone algorytmem propagacji wstecznej, w której w warstwach oddalonych od wyjścia sieci sieć ma tendencję do dokonywania coraz mniejszych zmian \cite{deep}. Tutaj sieć jest rozbudowywana powoli o kolejne warstwy dopiero wtedy, gdy w poprzednich warstwach pojawiły się takie cechy. Stosuje się tu sieci typu \textit{autoencoder}, które używając aproksymacji identycznościowej wykorzystują warstwę ukrytą składającą się z mniejszej ilości neuronów niż ilość wejść lub wyjść z sieci. W przypadku głębokich sieci neuronowych trzeba uważać na to, aby sieć nie dopasowała się zbyt mocno do danych uczących, ponieważ na danych testowych może później niepoprawnie działać.
+
+W przypadku realizacji przestawionego projektu wykorzystano głębokie sieci neuronowe do uczenia nadzorowanego, ponieważ rozważano problem klasyfikacji. Do realizacji głębokiego uczenia użyto tutaj autoenkodera, jako funkcja aktywacji posłużyła w warstwie wyjściowej funkcja typu \textit{softmax}. Dokładny opis procedur znajduje się w sekcji \ref{sub:dodatekB}.
+
+% literatura

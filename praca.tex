@@ -1,0 +1,131 @@
+\documentclass[11pt,a4paper,titlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage[english,polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{polski}
+%\usepackage[math,light]{anttor}
+\usepackage[light]{anttor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{siunitx}
+%\usepackage{subcaption}
+\usepackage{sidecap}
+%\usepackage{wrapfig}
+\usepackage{epstopdf}
+\usepackage{booktabs}
+\usepackage{forloop}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage[framed,numbered,autolinebreaks]{mcode}
+\usepackage[colorlinks=false,urlcolor=blue,citecolor=green]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{svg}
+\usepackage{multirow}
+\usepackage{enumerate}%[I], numerki, [(a)]
+\usepackage{float}
+%\usepackage{courier}
+%ustawienie poziomów wypunktowania do wyboru: $\bullet$, $\cdot$, $\diamond$, $-$, $\ast$ and $\circ$ 
+\renewcommand{\labelitemi}{$\diamond$}
+\renewcommand{\labelitemii}{$\bullet$}
+\renewcommand{\labelitemiii}{$-$}
+\renewcommand{\labelitemiv}{$\ast$}
+
+%Figure numbering
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{equation}{section}
+
+\newcommand*{\captionsource}[2]{%
+  \caption[{#1}]{%
+    #1%
+    \\\hspace{\linewidth}%
+    \textbf{Źródło:} #2%
+  }%
+}
+
+\AtBeginDocument{
+
+	\renewcommand{\tablename}{Tabela}
+
+	\renewcommand{\figurename}{Rys.}
+}
+
+%tabelki
+\usepackage{tabularx}
+\newcolumntype{A}{>{\centering\arraybackslash}X}
+\newcolumntype{B}{>{\centering\arraybackslash} m{0.4\textwidth} }
+
+% --- < bibliografia > ---
+\usepackage[
+style=numeric,
+sorting=none,
+% Zastosuj styl wpisu bibliograficznego właściwy językowi publikacji.
+language=auto,
+autolang=other,
+% Zapisuj datę dostępu do strony WWW w formacie RRRR-MM-DD.
+urldate=edtf,
+seconds=true,
+% Nie dodawaj numerów stron, na których występuje cytowanie.
+backref=false,
+% Podawaj ISBN.
+isbn=true,
+% Nie podawaj URL-i, o ile nie jest to konieczne.
+url=false,
+% Ustawienia związane z polskimi normami dla bibliografii.
+maxbibnames=3,
+% Jeżeli używamy BibTeXa:
+backend=biber
+]{biblatex}
+% --- < bibliografia > --- Koniec
+
+\usepackage{csquotes}
+\DeclareQuoteAlias{croatian}{polish} % Ponieważ `csquotes` nie posiada polskiego stylu, można skorzystać z mocno zbliżonego stylu chorwackiego.
+
+\addbibresource{bibliografia.bib}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Rozpoznawanie obiektów na obrazach zdarzeniowych}
+\fancyfoot[R]{Wieloprocesorowe Systemy Wizyjne}
+\fancyhead[L]{M. Kowalczyk i J. Piechota}     
+\fancyfoot[L]{Strona \thepage \hspace{1pt} z\hspace{1pt} \pageref*{LastPage}}    
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+\include{titlepage}
+
+\begin{center}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{obrazki/wstep}
+\end{figure}
+\end{center}
+
+\section*{Streszczenie}
+Celem projektu było zaprojektowanie i implementacja sieci neuronowej do rozpoznawania obiektów na obrazach w reprezentacji zdarzeniowej. Skorzystano z bazy danych \textit{MNIST-DVS}, która zawiera obrazy cyfr zapisane w tej reprezentacji. W celu zmniejszenia ilości danych potrzebnych do przetworzenia oraz poprawy jakości obrazów wykonano proste przetwarzanie wstępne. Dane zostały następnie przekonwertowane do postaci, która może posłużyć do uczenia sieci neuronowej. Na koniec sprawdzono skuteczność w zależności od wielkości sieci.
+ 
+\clearpage
+\tableofcontents
+\clearpage
+
+\include{wstep}
+\include{analiza}
+\include{koncepcja}
+\include{testowanie}
+\include{rezultaty}
+\include{podsumowanie}
+\include{dodatekA}
+\include{dodatekB}
+\include{dodatekC}
+\include{dodatekD}
+
+\appendix
+\nocite{*}
+\printbibliography
+\addcontentsline{toc}{section}{Bibliografia}
+\end{document}
