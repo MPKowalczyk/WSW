@@ -1,0 +1,261 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{none/global/}
+  \entry{impuls2}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=GBJ}{%
+         family={Grzyb},
+         familyi={G\bibinitperiod},
+         given={Beata\bibnamedelima Joanna},
+         giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GBJ1}
+    \strng{fullhash}{GBJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{URL: \url{
+  https://www3.uji.es/~grzyb/downloads/master-thesis.pdf (term. wiz.
+  2018-01-06)}}
+    \field{title}{Alternatywne modele neuronów i właściwości ich sieci}
+    \list{institution}{1}{%
+      {Uniwersytet Marii Curie-Skłodowskiej w Lublinie}%
+    }
+    \field{type}{Praca magisterska}
+    \field{year}{2007}
+  \endentry
+
+  \entry{impuls}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=DB}{%
+         family={Dzieńkowski},
+         familyi={D\bibinitperiod},
+         given={Bartłomej},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DB1}
+    \strng{fullhash}{DB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{URL: \url{
+  http://udkdev.net/portfolio/files/praca_dyplomowa.pdf (term. wiz.
+  2018-01-06).}}
+    \field{title}{Badanie możliwości wykorzystania impulsowej sieci
+  neuronowej do symulacji żywych organizmów}
+    \list{institution}{1}{%
+      {Politechnika Wrocławska}%
+    }
+    \field{type}{Praca dyplomowa}
+    \field{year}{2010}
+  \endentry
+
+  \entry{baza}{online}{}
+    \name{author}{2}{}{%
+      {{hash=SGT}{%
+         family={Serrano-Gotarredona},
+         familyi={S\bibinitperiod-G\bibinitperiod},
+         given={Teresa},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LBB}{%
+         family={Linares-Barranco},
+         familyi={L\bibinitperiod-B\bibinitperiod},
+         given={Bernabé},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SGTLBB1}
+    \strng{fullhash}{SGTLBB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Poker-DVS and MNIST-DVS. Their History, How They Were Made,
+  and Other Details}
+    \verb{url}
+    \verb https://www.frontiersin.org/articles/10.3389/fnins.2015.00481/full
+    \endverb
+    \field{urlday}{19}
+    \field{urlmonth}{12}
+    \field{urlyear}{2017}
+  \endentry
+
+  \entry{wymagania_Matlab}{online}{}
+    \field{labeltitlesource}{title}
+    \field{title}{System Requirements - Release 2017b}
+    \verb{url}
+    \verb https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/sup
+    \verb port/sysreq/files/SystemRequirements-Release2017a_SupportedCompilers.
+    \verb pdf/SystemRequirements-Release2017b_Windows.pdf
+    \endverb
+    \field{urlday}{03}
+    \field{urlmonth}{01}
+    \field{urlyear}{2018}
+  \endentry
+
+  \entry{MNIST_DVS}{online}{}
+    \name{author}{2}{}{%
+      {{hash=SGT}{%
+         family={Serrano-Gotarredona},
+         familyi={S\bibinitperiod-G\bibinitperiod},
+         given={Teresa},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LBB}{%
+         family={Linares-Barranco},
+         familyi={L\bibinitperiod-B\bibinitperiod},
+         given={Bernabé},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SGTLBB1}
+    \strng{fullhash}{SGTLBB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Poker-DVS and MNIST-DVS. Their History, How They Were Made,
+  and Other Details}
+    \verb{url}
+    \verb https://www.frontiersin.org/articles/10.3389/fnins.2015.00481/full
+    \endverb
+    \field{urlday}{19}
+    \field{urlmonth}{12}
+    \field{urlyear}{2017}
+  \endentry
+
+  \entry{back}{online}{}
+    \field{labeltitlesource}{title}
+    \field{title}{Sieci neuronowe - uczenie.}
+    \verb{url}
+    \verb http://edu.pjwstk.edu.pl/wyklady/nai/scb/wyklad3/w3.htm
+    \endverb
+    \field{urlday}{03}
+    \field{urlmonth}{01}
+    \field{urlyear}{2018}
+  \endentry
+
+  \entry{back2}{online}{}
+    \name{author}{1}{}{%
+      {{hash=MCJP}{%
+         family={M.\bibnamedelima Czoków},
+         familyi={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+         given={J.\bibnamedelima Piersa},
+         giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Uniwersytet Mikołaja Kopernika w Toruniu}%
+    }
+    \strng{namehash}{MCJP1}
+    \strng{fullhash}{MCJP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Algorytm propagacji wstecznej}
+    \verb{url}
+    \verb http://www-users.mat.umk.pl/~piersaj/www/contents/teaching/wsn2010/ws
+    \verb n-lec06-bep.pdf
+    \endverb
+    \field{urlday}{05}
+    \field{urlmonth}{01}
+    \field{urlyear}{2018}
+  \endentry
+
+  \entry{deep}{online}{}
+    \name{author}{1}{}{%
+      {{hash=HA}{%
+         family={Horzyk},
+         familyi={H\bibinitperiod},
+         given={Adrian},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HA1}
+    \strng{fullhash}{HA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Uczenie głębokie i głębokie sieci neuronowe}
+    \verb{url}
+    \verb http://home.agh.edu.pl/~horzyk/lectures/miw/MIW-DL.pdf
+    \endverb
+    \field{urlday}{05}
+    \field{urlmonth}{01}
+    \field{urlyear}{2018}
+  \endentry
+
+  \entry{baza_down}{online}{}
+    \name{author}{1}{}{%
+      {{hash=SGT}{%
+         family={Serrano-Gotarredona},
+         familyi={S\bibinitperiod-G\bibinitperiod},
+         given={Teresa},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SGT1}
+    \strng{fullhash}{SGT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{MNIST$\_$DVS}
+    \verb{url}
+    \verb http://www2.imse-cnm.csic.es/caviar/MNIST_DVS/
+    \endverb
+    \field{urlday}{19}
+    \field{urlmonth}{12}
+    \field{urlyear}{2017}
+  \endentry
+
+  \entry{gui}{online}{}
+    \name{author}{1}{}{%
+      {{hash=HDMB}{%
+         family={Howard\bibnamedelima Demuth},
+         familyi={H\bibinitperiod\bibinitdelim D\bibinitperiod},
+         given={Mark\bibnamedelima Beale},
+         giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The MathWorks}%
+    }
+    \strng{namehash}{HDMB1}
+    \strng{fullhash}{HDMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Neural Network Toolbox}
+    \verb{url}
+    \verb http://cda.psych.uiuc.edu/matlab_pdf/nnet.pdf
+    \endverb
+    \field{urlday}{05}
+    \field{urlmonth}{01}
+    \field{urlyear}{2018}
+  \endentry
+
+  \entry{funkcje}{online}{}
+    \list{publisher}{1}{%
+      {The MathWorks}%
+    }
+    \field{labeltitlesource}{title}
+    \field{title}{Construct Deep Network Using Autoencoders}
+    \verb{url}
+    \verb https://www.mathworks.com/help/nnet/ug/construct-deep-network-using-a
+    \verb utoencoders.html
+    \endverb
+    \field{urlday}{05}
+    \field{urlmonth}{01}
+    \field{urlyear}{2018}
+  \endentry
+\endsortlist
+\endinput

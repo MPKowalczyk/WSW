@@ -1,28 +1,31 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
 \select@language {polish}
-\contentsline {section}{\numberline {1}Wst\IeC {\k e}p}{5}{section.1}
-\contentsline {subsection}{\numberline {1.1}Cel projektu}{5}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Proponowane rozwi\IeC {\k a}zanie}{5}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Alternatywne rozwi\IeC {\k a}zania}{5}{subsection.1.3}
-\contentsline {section}{\numberline {2}Analiza z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci i estymacja zapotrzebowania na zasoby}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Przygotowanie danych}{6}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Uczenie sieci neuronowej}{6}{subsection.2.2}
-\contentsline {section}{\numberline {3}Koncepcja proponowanego rozwi\IeC {\k a}zania}{8}{section.3}
-\contentsline {section}{\numberline {4}Symulacja i testowanie}{10}{section.4}
-\contentsline {subsection}{\numberline {4.1}Modelowanie i symulacja}{10}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Testowanie a weryfikacja}{10}{subsection.4.2}
-\contentsline {section}{\numberline {5}Rezultaty i wnioski}{11}{section.5}
-\contentsline {section}{\numberline {6}Podsumowanie}{12}{section.6}
-\contentsline {section}{\numberline {7}DODATEK A: Szczeg\IeC {\'o}\IeC {\l }owy opis zadania}{13}{section.7}
-\contentsline {subsection}{\numberline {7.1}Specyfikacja projektu}{13}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Szczeg\IeC {\'o}\IeC {\l }owy opis realizowanych algorytm\IeC {\'o}w przetwarzania danych}{13}{subsection.7.2}
-\contentsline {subparagraph}{Przygotowanie danych}{13}{section*.4}
-\contentsline {subparagraph}{Uczenie sieci}{13}{section*.5}
-\contentsline {subparagraph}{Algorytm wstecznej propagacji b\IeC {\l }\IeC {\k e}d\IeC {\'o}w}{13}{section*.6}
-\contentsline {subparagraph}{G\IeC {\l }\IeC {\k e}bokie sieci neuronowe}{14}{section*.7}
-\contentsline {section}{\numberline {8}DODATEK B: Dokumentacja techniczna}{15}{section.8}
-\contentsline {subsection}{\numberline {8.1}Dokumentacja oprogramowania}{15}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Procedura symulacji, testowania i weryfikacji}{15}{subsection.8.2}
-\contentsline {section}{\numberline {9}DODATEK C: Spis zawarto\IeC {\'s}ci do\IeC {\l }\IeC {\k a}czonego no\IeC {\'s}nika (p\IeC {\l }yta CD ROM)}{16}{section.9}
-\contentsline {section}{\numberline {10}DODATEK D: Historia zmian}{17}{section.10}
+\contentsline {section}{\numberline {1}Wst\IeC {\k e}p}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Cel projektu}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Proponowane rozwi\IeC {\k a}zanie}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Alternatywne rozwi\IeC {\k a}zania}{4}{subsection.1.3}
+\contentsline {section}{\numberline {2}Analiza z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci i estymacja zapotrzebowania na zasoby}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Przygotowanie danych}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Uczenie sieci neuronowej}{5}{subsection.2.2}
+\contentsline {section}{\numberline {3}Koncepcja proponowanego rozwi\IeC {\k a}zania}{7}{section.3}
+\contentsline {section}{\numberline {4}Symulacja i testowanie}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Modelowanie i symulacja}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Testowanie a weryfikacja}{9}{subsection.4.2}
+\contentsline {section}{\numberline {5}Rezultaty i wnioski}{10}{section.5}
+\contentsline {subsection}{\numberline {5.1}GUI Matlaba - funkcja nprtool}{12}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Skrypt do uczenia g\IeC {\l }\IeC {\k e}bokiej sieci neuronowej}{13}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Por\IeC {\'o}wnanie metod}{15}{subsection.5.3}
+\contentsline {section}{\numberline {6}Podsumowanie}{17}{section.6}
+\contentsline {section}{\numberline {A}DODATEK A: Szczeg\IeC {\'o}\IeC {\l }owy opis zadania}{19}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Specyfikacja projektu}{19}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Szczeg\IeC {\'o}\IeC {\l }owy opis realizowanych algorytm\IeC {\'o}w przetwarzania danych}{19}{subsection.A.2}
+\contentsline {subparagraph}{Przygotowanie danych}{19}{section*.14}
+\contentsline {subparagraph}{Uczenie sieci}{19}{section*.15}
+\contentsline {subparagraph}{Algorytm wstecznej propagacji b\IeC {\l }\IeC {\k e}d\IeC {\'o}w}{19}{section*.16}
+\contentsline {subparagraph}{G\IeC {\l }\IeC {\k e}bokie sieci neuronowe}{20}{section*.17}
+\contentsline {section}{\numberline {B}DODATEK B: Dokumentacja techniczna}{21}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Dokumentacja oprogramowania}{21}{subsection.B.1}
+\contentsline {subsection}{\numberline {B.2}Procedura symulacji, testowania i weryfikacji}{26}{subsection.B.2}
+\contentsline {section}{\numberline {C}DODATEK C: Spis zawarto\IeC {\'s}ci do\IeC {\l }\IeC {\k a}czonego no\IeC {\'s}nika (p\IeC {\l }yta CD ROM)}{27}{appendix.C}
+\contentsline {section}{\numberline {D}DODATEK D: Historia zmian}{28}{appendix.D}

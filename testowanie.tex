@@ -1,12 +1,22 @@
 \section{Symulacja i testowanie}
 \label{sub:testowanie}
 
-
-
 \subsection{Modelowanie i symulacja}
 \label{sub:modelowanie}
+
+Weryfikacja poprawności przedstawionej koncepcji rozwiązania nie mogła zostać przedstawiona w niniejszym projekcie w sposób symulacyjny. Powodem tego jest fakt, że program nie był implementowany na żadnej platformie sprzętowej, tylko w programie \textit{MATLAB}. Jednak zastosowano tutaj pewien sposób, który pozwalał sprawdzić, czy w zbiorze uczącym znajduje się odpowiednia liczba danych oraz czy dobrano prawidłową liczbę neuronów ukrytych. Dla tych testów posłużono się wbudowanym narzędziem programu \textit{MATLAB - Neural Network Toolbox}, a dokładnie jego narzędziem do klasyfikacji \textit{nprtool}. Proste GUI w sposób intuicyjny pomaga przy uczeniu i testowaniu różnych zależności. Po nauczeniu jest możliwość podglądu, jak sieć zachowywała się w poszczególnych epokach uczenia oraz jak wyglądają wyniki na zbiorze uczącym, testowym i walidacyjnym. GUI również dobiera odpowiednie proporcje pomiędzy tymi zbiorami. Dane użyte do testowania przedstawione były w postaci macierzy, gdzie w wierszach znajdowały się kolejne dane wejściowe. Podobnie rzecz się miała z etykietami - również była to macierz, w której wierszach znajdowały się etykiety do odpowiadających wierszy w macierzy danych wejściowych.
+
+
+Kryterium jakościowym, jaki wprowadzono podczas pracy nad projektem był stosunek procentowy poprawnie rozpoznanych cyfr do wszystkich danych wejściowych w~zbiorze testowym, wybranym losowo spośród całej stworzonej bazy. Podział zbioru danych wejściowych na zbiór uczący, testowy i walidacyjny był domyślny i~pozostawał w~stosunku 14:3:3 (70\%, 15\%, 15\% zbioru danych wejściowych). Zastosowano stałe wartości, aby uniknąć efektu przeuczenia i pozwolić na rzeczywistą ocenę poziomu nauczenia sieci. 
 
 
 \subsection{Testowanie a weryfikacja}
 \label{sub:weryfikacja}
 
+Docelowy algorytm, który został również napisany w programie \textit{MATLAB 2017b}, uwzględniał już cały zbiór danych. Napisany został w sposób umożliwiający uruchomienie go równolegle na kilku rdzeniach procesora CPU i z użyciem procesora graficznego GPU. Optymalny czas uczenia uzyskuje się dysponując procesorem graficznym NVIDIA, wspierającym architekturę \textit{CUDA}.
+
+
+Wskaźnik jakości został tutaj wyznaczony identycznie jak w sekcji \ref{sub:modelowanie}, podobnie było również podczas analizy ilościowej. Zbiór wejściowy został podzielony identycznie na zbiory: uczący, testujący i walidacyjny.
+
+
+Eksperymenty praktyczne ograniczyły się do kilku tylko prób, z uwagi na dużą liczbę danych potrzebnych do uczenia, a co za tym idzie długi czas działania algorytmu. Optymalną ilość neuronów ukrytych uzyskano dzięki przeprowadzeniu symulacji, dlatego właściwy algorytm został od razu zaimplementowany z właściwymi parametrami. Zauważono pewną zależność - im więcej neuronów ukrytych dodawano, tym uczenie trwało dłużej. Dla około 100 000 danych wejściowych uczenie głębokiej sieci neuronowej zajmowało około 40 minut.

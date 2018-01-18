@@ -2119,19 +2119,23 @@
     <bcf:datasource type="file" datatype="bibtex">bibliografia.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">baza</bcf:citekey>
-    <bcf:citekey order="2">wymagania_Matlab</bcf:citekey>
-    <bcf:citekey order="3">MNIST_DVS</bcf:citekey>
-    <bcf:citekey order="4">MNIST_DVS</bcf:citekey>
-    <bcf:citekey order="5">baza</bcf:citekey>
+    <bcf:citekey order="1">impuls2</bcf:citekey>
+    <bcf:citekey order="2">impuls</bcf:citekey>
+    <bcf:citekey order="3">impuls2</bcf:citekey>
+    <bcf:citekey order="4">baza</bcf:citekey>
+    <bcf:citekey order="5">wymagania_Matlab</bcf:citekey>
     <bcf:citekey order="6">MNIST_DVS</bcf:citekey>
-    <bcf:citekey order="7">back</bcf:citekey>
-    <bcf:citekey order="8">back2</bcf:citekey>
-    <bcf:citekey order="9">deep</bcf:citekey>
-    <bcf:citekey order="10">gui</bcf:citekey>
-    <bcf:citekey order="11">funkcje</bcf:citekey>
-    <bcf:citekey order="12">baza</bcf:citekey>
-    <bcf:citekey order="13">MNIST_DVS</bcf:citekey>
+    <bcf:citekey order="7">MNIST_DVS</bcf:citekey>
+    <bcf:citekey order="8">baza</bcf:citekey>
+    <bcf:citekey order="9">MNIST_DVS</bcf:citekey>
+    <bcf:citekey order="10">back</bcf:citekey>
+    <bcf:citekey order="11">back2</bcf:citekey>
+    <bcf:citekey order="12">deep</bcf:citekey>
+    <bcf:citekey order="13">baza_down</bcf:citekey>
+    <bcf:citekey order="14">gui</bcf:citekey>
+    <bcf:citekey order="15">funkcje</bcf:citekey>
+    <bcf:citekey order="16">baza</bcf:citekey>
+    <bcf:citekey order="17">MNIST_DVS</bcf:citekey>
     <bcf:citekey order="0">*</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none/global/" type="entry" sortscheme="none" sortnamekeyscheme="global" labelprefix="">

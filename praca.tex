@@ -60,32 +60,57 @@
 \newcolumntype{B}{>{\centering\arraybackslash} m{0.4\textwidth} }
 
 % --- < bibliografia > ---
+%\usepackage[
+%style=numeric,
+%sorting=none,
+%% Zastosuj styl wpisu bibliograficznego właściwy językowi publikacji.
+%language=auto,
+%autolang=other,
+%% Zapisuj datę dostępu do strony WWW w formacie RRRR-MM-DD.
+%urldate=edtf,
+%seconds=true,
+%% Nie dodawaj numerów stron, na których występuje cytowanie.
+%backref=false,
+%% Podawaj ISBN.
+%isbn=true,
+%% Nie podawaj URL-i, o ile nie jest to konieczne.
+%url=false,
+%% Ustawienia związane z polskimi normami dla bibliografii.
+%maxbibnames=3,
+%% Jeżeli używamy BibTeXa:
+%backend=biber
+%]{biblatex}
+%% --- < bibliografia > --- Koniec
+
+
 \usepackage[
 style=numeric,
 sorting=none,
+%
 % Zastosuj styl wpisu bibliograficznego właściwy językowi publikacji.
-language=auto,
+language=autobib,
 autolang=other,
 % Zapisuj datę dostępu do strony WWW w formacie RRRR-MM-DD.
-urldate=edtf,
-seconds=true,
+urldate=iso8601,
 % Nie dodawaj numerów stron, na których występuje cytowanie.
 backref=false,
 % Podawaj ISBN.
 isbn=true,
 % Nie podawaj URL-i, o ile nie jest to konieczne.
 url=false,
+%
 % Ustawienia związane z polskimi normami dla bibliografii.
 maxbibnames=3,
 % Jeżeli używamy BibTeXa:
-backend=biber
+backend=bibtex
 ]{biblatex}
-% --- < bibliografia > --- Koniec
+
+\usepackage{url}
 
 \usepackage{csquotes}
 \DeclareQuoteAlias{croatian}{polish} % Ponieważ `csquotes` nie posiada polskiego stylu, można skorzystać z mocno zbliżonego stylu chorwackiego.
 
-\addbibresource{bibliografia.bib}
+%\usepackage[backend=biber,style=authoryear-icomp]{biblatex}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -96,13 +121,22 @@ backend=biber
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
 
+\addbibresource{bibliografia.bib}
+
 \begin{document}
-\include{titlepage}
+%\include{titlepage}
 
 \begin{center}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=1]{obrazki/wstep}
+	\includegraphics[scale=1]{obrazki/wstep0}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.9]{obrazki/wstep1}
 \end{figure}
 \end{center}
 
@@ -119,13 +153,21 @@ Celem projektu było zaprojektowanie i implementacja sieci neuronowej do rozpozn
 \include{testowanie}
 \include{rezultaty}
 \include{podsumowanie}
+
+\appendix
+\nocite{*}
+
+%\bibliographystyle{plain}
+%\bibliographystyle{IEEEtran}
+%\bibliography{bibfile}
+%\printbibliography
+%\addcontentsline{toc}{section}{Bibliografia}
+%\printbibliography[heading=bibintoc]
+\printbibliography
+
 \include{dodatekA}
 \include{dodatekB}
 \include{dodatekC}
 \include{dodatekD}
 
-\appendix
-\nocite{*}
-\printbibliography
-\addcontentsline{toc}{section}{Bibliografia}
 \end{document}

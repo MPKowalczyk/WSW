@@ -1,4 +1,15 @@
 \section{Podsumowanie}
 \label{sub:podsumowanie}
 
+Zaproponowane rozwiązanie sprawdziło się przy założeniach postawionego problemu. Głębokie sieci neuronowe spowodowały dość dokładne rozpoznawanie, na poziomie 94\%. Sieć ma duże możliwości, w miarę zwiększania liczby neuronów ukrytych lub liczby warstw zwiększała się skuteczność rozpoznawania cyfr na zbiorze testowym. Na zbiorze uczącym wartość ta była niespodziewanie wysoka (przy 450 neuronach dochodziła do 100\%).
+Reprezentacja zdarzeniowa okazała się bardzo odporną na zakłócenia. W danych wejściowych istniała duża liczba zdarzeń zakłócających, tzn. nie należących do obiektu zainteresowań. Jednak mimo to sieć była w stanie poprawnie nauczyć się rozpoznawać te zaszumione dane wejściowe i poradziła sobie z problemem, z którym nawet człowiek miałby trudności. Gołym okiem często nie było widać z jaką cyfrą miało się do czynienia.
 
+
+\noindent Zastosowanie zrównoleglenia obliczeń oraz procesora graficznego GPU znacznie zwiększyło efektywność pracy i dało możliwość nauczenia sieci posiadającej w sumie 450 neuronów ukrytych. To wszystko dało zadowalający efekt końcowy, o dużej skuteczności rozpoznawania. Ponieważ zbiór uczący, walidacyjny i testowy był wybierany w sposób losowy, wyniki mogą delikatnie różnić się pomiędzy kolejnymi wywołaniami z tymi samymi parametrami.
+
+
+\noindent Porównując obie metody okazuje się, że wyniki były nieco lepsze dla sieci składającej się z dwóch warstwy posiadających odpowiednio 300 i 150 neuronów ukrytych niż jednej o 450 neuronach. Przyjmuje się, że sieć z jedną warstwą ukrytą powinna nauczyć się rozwiązywania większości postawionych problemów i tak się stało, jednak z mniejszą skutecznością. Dodanie drugiej warstwy polepsza wskaźnik jakości. Obie sieci wykazywały jednak podobne błędy, myląc ze sobą te same cyfry. Ma to związek ze specyficzną postacią danych na wejściu w reprezentacji zdarzeniowej.
+Podsumowując, reprezentacja zdarzeniowa jest niecodziennym podejściem do problemu rozpoznawania cyfr. Jednak okazuje się, że można dzięki niej uzyskać całkiem zadowalające efekty, pomimo zaszumienia wynikającego z występowania losowych zdarzeń, nie związanych z poruszaniem się obiektu zainteresowania, czyli liczby. Niebagatelny wpływ ma na to częstotliwość pracy monitora czy kontrast ustawiony na ekranie. Nigdy baza nie będzie tutaj idealna, jednak widać, że pomimo tych niedoskonałości algorytm jest w stanie skutecznie określać z~jaką cyfrą ma do czynienia.
+
+%czy lepiej jedno czy drugie
+%można dodać coś jeszcze

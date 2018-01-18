@@ -1,9 +1,110 @@
 \section{Rezultaty i wnioski}
 \label{sub:rezultaty}
 
+Rezultaty otrzymane podczas przetwarzania bazy \textit{MNIST-DVS} pozwalały na sprawne i~efektywne uczenie. Jak już zostało szczegółowo omówione w sekcji \ref{sub:koncepcja}, dane wejściowe zostały przedstawione jako macierze o rozmiarze $40 \times 40$, w których wartość 1 oznacza, że nastąpiło zdarzenie w danym miejscu. Przykładowe dane zostały pokazane na rysunku \ref{fig:zero} i \ref{fig:osiem}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=2]{obrazki/zero}
+	\caption{\label{fig:subcaption_example}Przykład niezaszumionych danych wejściowych przedstwiających zdarzenia reprezentujące cyfrę zero.}{\label{fig:zero}}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=2]{obrazki/osiem}
+	\caption{\label{fig:subcaption_example}Przykład zaszumionych danych wejściowych przedstwiających zdarzenia reprezentujące cyfrę osiem.}{\label{fig:osiem}}
+\end{figure}
+
+\noindent Zdarzenia reprezentujące cyfrę zero idealnie odwzorowują kontury obszaru zainteresowania. Jednak w przypadku cyfry osiem występują pewne szumy. Stanowią one duży problem dla człowieka, aby rozpoznać spośród licznych zdarzeń zdarzenia reprezentujące ruch konturów przedstawionej cyfry. Zaproponowana metoda jednak radzi sobie dobrze z tym problemem i prawidłowo rozpoznaje liczbę. Widać tu przewagę reprezentacji zdarzeniowej nad klasycznymi metodami, gdzie zaszumienie często powodowało, że sieć nie była poprawnie rozpoznać obiektów. Inne przykłady danych wejściowych zostały przedstawione na rysunku \ref{fig:cyfry}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{obrazki/zero2}
+	\includegraphics[scale=0.7]{obrazki/jeden}
+	\includegraphics[scale=0.7]{obrazki/dwa}
+	\includegraphics[scale=0.7]{obrazki/trzy}
+	\includegraphics[scale=0.7]{obrazki/cztery}
+	\includegraphics[scale=0.7]{obrazki/piec}
+	\includegraphics[scale=0.7]{obrazki/szesc}
+	\includegraphics[scale=0.7]{obrazki/siedem}
+\end{figure}
+	\newpage
+\begin{figure}[H]
+	\centering
+	
+	\includegraphics[scale=0.7]{obrazki/osiem2}
+	\includegraphics[scale=0.7]{obrazki/dziewiec}
+	\caption{\label{fig:subcaption_example}Przykłady danych wejściowych - po jednym reprezentującym daną cyfrę.}{\label{fig:cyfry}}
+\end{figure}
+
+\subsection{GUI Matlaba - funkcja nprtool}
+\label{sub:funkcja}
+
+Gotowe dane poddano symulacji używając narzędzia programu \textit{MATLAB - nprtool}. Na zbiorze wejściowym testowano dano z użyciem różnej liczby neuronów ukrytych, w celu znalezienia wartości optymalnej. Wartość ta powoduje odpowiednio maksymalne wytrenowanie sieci, nie powodując przy tym jej przetrenowania. Dane przedstawiające jaki wpływ ma ilość neuronów ukrytych na skuteczność uczenia przedstawia tabela 1.
+
+\begin{center}
+Tabela 1: Zależność liczby neuronów ukrytych od skuteczności uczenia sieci.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.9]{obrazki/wyniki}
+\end{figure}
+\end{center}
+
+\noindent Widać tutaj dużą zależność pomiędzy ilościami neuronów ukrytych, a skutecznością rozpoznawania cyfr. Przy ilości neuronów 450 zdolność rozpoznawania dla zbioru uczącego osiągnęła prawie 100\%. Dla zbioru testowego, co jest właściwym wynikiem skuteczności działania algorytmu, wskaźnik jakości otrzymał wartość 90.9\%. To wynik uśredniony dla wszystkich dziesięciu cyfr. Odchylenie standardowe danych wynosiło 2.7086\%. Z uwagi na dużą liczbę danych, uzyskano dobrą skuteczność, pomimo iż część danych ze zbioru była mocno zaszumiona i algorytm nie jest w stanie ich rozpoznać. 
 
 
-%\subsection{Modelowanie i symulacja}
-%\label{sub:modelowanie}
+\noindent Im więcej neuronów ukrytych, tym uczenie sieci trwa dłużej, nawet około 40 minut. Obciążenie procesora dochodzi tu do 80\%. Jest to więc proces potrzebujący duże zasoby obliczeniowe. Prawdopodobnie dla większej liczby neuronów ukrytych uzyskano by większą skuteczność, jednak rozpoznawanie na poziomie 91\% w reprezentacji zdarzeniowej było wystarczająco dobrym wynikiem.
+
+\subsection{Skrypt do uczenia głębokiej sieci neuronowej}
+\label{sub:skrypt}
+
+Sieć neuronowa na wejściu otrzymuje celki o rozmiarze 40 $\times$ 40, czyli łącznie 1600 elementów. Wynika z tego fakt, że liczba neuronów wejściowych jest również równa 1600. Podczas implementacji skryptu wybrano najbardziej optymalną ilość neuronów ukrytych. Zgodnie z wynikami uzyskanym i w sekcji \ref{sub:funkcja} była to liczba 450. Zastosowano tu jednak trochę inne podejście - użyto dwa auto-enkodery - pierwszy posiadający 300, a~drugi 150 neuronów. Na końcu zastosowano warstwę wyjściową typu \textit{softmax}, która jako sygnały wejściowe używa wartości wyjść z drugiego auto-enkoder i pozwala na uzyskanie odpowiedniej liczby wyjść. Schemat całościowy sieci wraz z ilością neuronów w każdej warstwie przedstawiono na rysunku \ref{fig:siec_n}.
+
+\begin{center}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=2.1]{obrazki/siec_all}
+	\caption{\label{fig:subcaption_example}Schemat zastosowanej głębokiej sieci neuronowej.}{\label{fig:siec_n}}
+\end{figure}
+\end{center}
+
+\noindent Dokładny opis funkcji użytych do stworzenia i nauczenia sieci znajduje się w sekcji \ref{sub:dokumentacja}. 
 
 
+\noindent Po wytrenowaniu sieci uzyskane wyniki przedstawiono na wykresie. Interesujące są te, które zostały otrzymane dla zbioru testowego, ponieważ to dla tych danych ustala się wskaźnik jakości algorytmu. Dokładne wyniki przedstawiające rozkład, które cyfry były najczęściej rozpoznawane lub mylone z innymi znajduje się na rysunku \ref{fig:wynik2}.
+
+\begin{center}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{obrazki/wynik_deep}
+	\caption{\label{fig:subcaption_example}Wynik uczenia głębokiej sieci neuronowej, posiadającej 450 neuronów ukrytych. Wyniki pokazane dla zbioru testowego stanowiącego 15\% danych.}{\label{fig:wynik2}}
+\end{figure}
+\end{center}
+
+
+\noindent Wykres przedstawia skuteczność rozpoznawania przez sieć cyfr 0 - 9. W celu ułatwienia obliczeń cyfry zostały przeskalowane przez dodanie jedynki (1 - 10). Oś \textit{Target Class} przedstawia rzeczywiste cyfry, zaś oś \textit{Output Class} podaje informację, w jaki sposób algorytm rozpoznał te cyfry (do jakiej grupy je sklasyfikował). W każdym polu, u góry, zaznaczone pogrubioną czcionką znajduje się ilość danych sklasyfikowanych jak para (rzeczywista dana, wyjściowa dana). W tym samym polu na dole obliczony jest stosunek procentowy tych danych w całym zbiorze wejściowym określającym daną cyfrę. Pola oznaczone kolorem szarym przedstawiają zsumowane wyniki pól dla danej kolumny lub rzędu. Ostateczny wynik, uwzględniający zbiór cyfr całościowo, bez względu na rozróżnianie cyfr, znajduje się w prawym, dolnym rogu, oznaczony kolorem niebieskim.
+
+
+\noindent Średnia wartość skuteczności, a więc przyjęty wskaźnik jakości otrzymał tu wartość 73.1\%. To wynik uśredniony dla wszystkich dziesięciu cyfr. Odchylenie standardowe danych wynosiło 8.0810\%. W przypadku tej metody nie uzyskano tak wysokiej skuteczności jak w poprzedniej, a więc do tego rodzaju danych lepiej sprawdziła się sieć typu \textit{backpropagation}. 
+
+
+\noindent Zdecydowano się więc na dotrenowanie sieci poprzez użycie metody \textit{backpropagation} dla wszystkich warstw. Uzyskano zadowalające efekty. Wyniki znajdują się na rysunku \ref{fig:wynik3}
+
+\begin{center}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{obrazki/wynik_deep_tune}
+	\caption{\label{fig:subcaption_example}Wynik uczenia głębokiej sieci neuronowej, posiadającej 450 neuronów ukrytych, z użyciem metody \textit{backpropagation}. Wyniki pokazane dla zbioru testowego stanowiącego 15\% danych.}{\label{fig:wynik3}}
+\end{figure}
+\end{center}
+
+
+\noindent Średnia wartość skuteczności, a więc przyjęty wskaźnik jakości otrzymał tu wartość wysoką - 93.8\%. To wynik uśredniony dla wszystkich dziesięciu cyfr. Odchylenie standardowe danych wynosiło 1.6753\%. W przypadku tej metody uzyskano najwyższą skuteczność, a więc do tego rodzaju danych lepiej sprawdziła się sieć typu \textit{backpropagation} z dwoma warstwami ukrytymi, mająca taką samą liczbę neuronów ukrytych co w poprzedniej metodzie mającej jedną warstwę. 
+
+Do wykonania tych obliczeń użyte były zarówno zasoby CPU jak i GPU, co pozwoliło zmniejszy czas obliczeń. Obciążenie procesora wynosiło około 70\% maksymalnej wydajności. Uzyskano satysfakcjonujące wyniki, dlatego poprzestano testy na takiej liczbie neuronów.
+
+\subsection{Porównanie metod}
+\label{sub:porownanie}
+
+Oba podejścia używają sieci typu \textit{backpropagation} bazującej na metodzie gradientowej obliczania podczas aktualizacji wag. W \textit{MATLAB} do realizacji tego celu służy finkcja \textit{trainscg}. Różnica w obu podejściach polega na różnej liczbie warstw ukrytych - w~pierwszym podejściu była jedna warstwa, w drugim dwie reprezentowane za pomocą stworzenia dwóch auto-enkoderów. Wyniki pokazują, że dwie warstwy sprawdziły się nieco lepiej w przypadku tego zadania. Ilość ukrytych neuronów pozostała taka sama w~obu podejściach, jednak dzielenie procesu uczenia na dwie warstwy okazało się lepszym wyborem. Skuteczność na zbiorze testowym jest blisko 2\% wyższa.
+Obie metody pokazują, że istnieje pewna analogia pomiędzy popełnianiem błędów w cyfrach podobnych do siebie pod pewnymi względami. Zauważono, że często algorytm rozpoznawał cyfrę '5'~jako '6' lub '8', a '8' jako '9' lub '5'. Ma to związek z faktem, że cyfry te mają dużo części wspólnych, a reprezentacja zdarzeniowa nie dostarcza pełnej informacji o krawędziach, ale tylko część tej informacji, czyli miejsce, gdzie nastąpiła pewna zmiana. 
